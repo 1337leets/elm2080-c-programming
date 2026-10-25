@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -std=c99 -Wall -Wextra
 
-SRCS = $(wildcard hw*/*.c)
+SRCS = $(wildcard hw*/*.c practice/*/*.c)
 BINS = $(patsubst %.c,bin/%,$(notdir $(SRCS)))
 
 vpath %.c $(sort $(dir $(SRCS)))

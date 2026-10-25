@@ -18,6 +18,9 @@ hw3-mesh-current/
   mesh_current_loops.c           submitted solution, inverse and product in loops with a singular matrix check
   mesh_current.c                 inverse written out element by element
   mesh_current_adjugate.c        R matrix built from R1, R2, R3 and inverted with the adjugate
+practice/
+  filename-pattern-matcher/
+    pattern_matcher.c            extra exercise, not part of ELM2080
 docs/images/                     flowcharts as submitted
 ```
 
@@ -77,6 +80,24 @@ I_B = 1.00 A
 ```
 
 ![Flowchart of assignment 3](docs/images/hw3-mesh-current-flowchart.png)
+
+## Practice
+
+### Filename pattern matcher
+
+This one is not from ELM2080. A friend sent me a homework question from a C course at another university and I solved it for practice.
+The function `matches` compares a filename with a pattern case-insensitively, where `x+` stands for one or more of the character `x`,
+so `lost+file` matches `lostfile`, `losttfile` and `LOSTttFile` but not `losfile` or `lostfile_`. The program runs its own test table.
+
+```
+$ ./pattern_matcher
+[OK  ] filename=lostfile             pattern=lost+file    expected=true  result=true
+...
+13/13 tests passed
+```
+
+Known limitation. The `+` is matched greedily without backtracking, so a pattern where `x+` is followed by another `x` fails.
+For example `lo+o` does not match `loo` and `a+ab` does not match `aab`, although both should.
 
 ## Building
 
