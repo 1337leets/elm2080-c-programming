@@ -1,0 +1,17 @@
+# Build output
+bin/
+*.o
+*.exe
+a.out
+
+# Editor save files
+*.save
+*~
+
+# Always
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.bak
+~$*
